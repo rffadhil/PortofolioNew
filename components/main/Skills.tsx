@@ -1,24 +1,40 @@
+/** @format */
+
 import {
   Backend_skill,
   Frontend_skill,
   Full_stack,
-  Other_skill,
   Skill_data,
 } from "@/constants";
 import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
+import { SparklesIcon } from "@heroicons/react/24/solid";
 
 const Skills = () => {
   return (
     <section
       id="skills"
-      className="flex flex-col items-center justify-center gap-3 h-full relative overflow-hidden pb-80 py-20"
-      style={{ transform: "scale(0.9" }}
+      className="flex flex-col items-center justify-center gap-6 h-full relative overflow-hidden pb-80 py-20"
+      style={{ transform: "scale(0.9)" }}
     >
       <SkillText />
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      {/* Frontend */}
+      <div className="flex flex-wrap justify-center items-center gap-6 mt-8">
+        {Frontend_skill.map((image, index) => (
+          <SkillDataProvider
+            key={index}
+            src={image.Image}
+            width={image.width}
+            height={image.height}
+            index={index}
+          />
+        ))}
+      </div>
+
+      {/* Core Tech */}
+      <div className="flex flex-wrap justify-center items-center gap-6 mt-4">
         {Skill_data.map((image, index) => (
           <SkillDataProvider
             key={index}
@@ -30,18 +46,8 @@ const Skills = () => {
         ))}
       </div>
 
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Frontend_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+      {/* Backend */}
+      <div className="flex flex-wrap justify-center items-center gap-6 mt-4">
         {Backend_skill.map((image, index) => (
           <SkillDataProvider
             key={index}
@@ -52,7 +58,9 @@ const Skills = () => {
           />
         ))}
       </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
+
+      {/* Tools */}
+      <div className="flex flex-wrap justify-center items-center gap-6 mt-4">
         {Full_stack.map((image, index) => (
           <SkillDataProvider
             key={index}
@@ -63,16 +71,11 @@ const Skills = () => {
           />
         ))}
       </div>
-      <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
-        {Other_skill.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
-          />
-        ))}
+
+      {/* Badge */}
+      <div className="Welcome-box mt-12 py-[8px] px-[12px] border border-[#7042f88b] opacity-90 flex items-center">
+        <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5" />
+        <h1 className="Welcome-text text-[13px]">Built with Passion</h1>
       </div>
 
       <div className="w-full h-full absolute">
