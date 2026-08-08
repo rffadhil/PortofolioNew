@@ -1,11 +1,6 @@
 /** @format */
 
-import {
-  Backend_skill,
-  Frontend_skill,
-  Full_stack,
-  Skill_data,
-} from "@/constants";
+import { Portfolio_skills } from "@/constants";
 import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
@@ -20,9 +15,9 @@ const Skills = () => {
     >
       <SkillText />
 
-      {/* Frontend */}
-      <div className="flex flex-wrap justify-center items-center gap-6 mt-8">
-        {Frontend_skill.map((image, index) => (
+      {/* Row 1 */}
+      <div className="flex justify-center items-center gap-6 mt-8">
+        {Portfolio_skills.slice(0, 7).map((image, index) => (
           <SkillDataProvider
             key={index}
             src={image.Image}
@@ -33,41 +28,28 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* Core Tech */}
-      <div className="flex flex-wrap justify-center items-center gap-6 mt-4">
-        {Skill_data.map((image, index) => (
+      {/* Row 2 */}
+      <div className="flex justify-center items-center gap-6 mt-4">
+        {Portfolio_skills.slice(7, 12).map((image, index) => (
           <SkillDataProvider
             key={index}
             src={image.Image}
             width={image.width}
             height={image.height}
-            index={index}
+            index={index + 7}
           />
         ))}
       </div>
 
-      {/* Backend */}
-      <div className="flex flex-wrap justify-center items-center gap-6 mt-4">
-        {Backend_skill.map((image, index) => (
+      {/* Row 3 */}
+      <div className="flex justify-center items-center gap-6 mt-4">
+        {Portfolio_skills.slice(12, 16).map((image, index) => (
           <SkillDataProvider
             key={index}
             src={image.Image}
             width={image.width}
             height={image.height}
-            index={index}
-          />
-        ))}
-      </div>
-
-      {/* Tools */}
-      <div className="flex flex-wrap justify-center items-center gap-6 mt-4">
-        {Full_stack.map((image, index) => (
-          <SkillDataProvider
-            key={index}
-            src={image.Image}
-            width={image.width}
-            height={image.height}
-            index={index}
+            index={index + 12}
           />
         ))}
       </div>
