@@ -1,3 +1,5 @@
+/** @format */
+
 import React from "react";
 import ProjectCard from "../sub/ProjectCard";
 
@@ -12,9 +14,10 @@ const Projects = () => {
       </h1>
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
         <ProjectCard
-          src="/NextWebsite.png"
-          title="Modern Next.js Portfolio"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          src="/rekapin.png"
+          title="Rekapin"
+          description="AI-powered financial management platform designed to help MSMEs manage their financial records and business insights."
+          link="https://capstone-project-rekapin.vercel.app/"
         />
         <ProjectCard
           src="/CardImage.png"
