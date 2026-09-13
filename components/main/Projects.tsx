@@ -14,20 +14,22 @@ const Projects = () => {
       </h1>
       <div className="h-full w-full flex flex-col md:flex-row gap-10 px-10">
         <ProjectCard
-          src="/rekapin.png"
+          src="/Rekapin2.png"
           title="Rekapin"
           description="AI-powered financial management platform designed to help MSMEs manage their financial records and business insights."
           link="https://capstone-project-rekapin.vercel.app/"
         />
         <ProjectCard
-          src="/CardImage.png"
-          title="Interactive Website Cards"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          src="/LearningBuddy.png"
+          title="Learning Buddy"
+          description="AI-powered learning companion designed to make online learning more personal, interactive, and motivating."
+          link="https://github.com/AliAvvvv/Projek-Capstone-Learning-Buddy"
         />
         <ProjectCard
-          src="/SpaceWebsite.png"
-          title="Space Themed Website"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          src="/Unpam.png"
+          title="Information Portal"
+          description="A university information portal designed to provide academic and campus information in a structured and accessible interface."
+          link="https://github.com/rffadhil/Tugas-Sub-Web-Unpam"
         />
       </div>
     </div>

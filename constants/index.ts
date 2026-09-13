@@ -35,16 +35,19 @@ export const Skill_data = [
 
 export const Socials = [
   {
-    name: "Discord",
-    src: "/instagram.svg",
-  },
-  {
-    name: "Facebook",
-    src: "/facebook.svg",
-  },
-  {
     name: "Instagram",
-    src: "/discord.svg",
+    src: "/instagram.png",
+    link: "https://www.instagram.com/rffadhil_/",
+  },
+  {
+    name: "LinkedIn",
+    src: "/LinkedIn.png",
+    link: "https://www.linkedin.com/in/rafi-fadhil-amanullah-0b1412326/",
+  },
+  {
+    name: "GitHub",
+    src: "/gitwhite.png",
+    link: "https://github.com/rffadhil",
   },
 ];
 
