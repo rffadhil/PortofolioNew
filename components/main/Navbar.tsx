@@ -1,12 +1,10 @@
 /** @format */
 
-import { Socials } from "@/constants";
-import Image from "next/image";
 import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014] backdrop-blur-md z-[999] px-10">
+    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014]/60 backdrop-blur-md z-[999] px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         <a
           href="#about-me"
@@ -42,23 +40,13 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex flex-row gap-5">
-          {Socials.map((social) => (
-            <a
-              href={social.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={social.name}
-              className="cursor-pointer hover:opacity-70 transition-opacity"
-            >
-              <Image
-                src={social.src}
-                alt={social.name}
-                width={24}
-                height={24}
-              />
-            </a>
-          ))}
+        <div className="flex flex-row items-center">
+          <a
+            href="#contact"
+            className="px-6 py-2 rounded-full border border-[#7042f861] bg-[#0300145e] backdrop-blur-md text-gray-200 text-sm font-medium shadow-[0_0_12px_rgba(112,66,248,0.15)] hover:border-cyan-400/60 hover:text-cyan-300 hover:shadow-[0_0_20px_rgba(34,211,238,0.35)] transition-all duration-300"
+          >
+            Contact
+          </a>
         </div>
       </div>
     </div>
