@@ -4,7 +4,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { slideInFromTop } from "@/utils/motion";
+import {
+  slideInFromTop,
+  slideInFromLeft,
+  slideInFromRight,
+} from "@/utils/motion";
 import Image from "next/image";
 
 const Encryption = () => {
@@ -65,7 +69,8 @@ const Encryption = () => {
       <motion.div
         variants={slideInFromTop}
         initial="hidden"
-        animate="visible"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
         className="text-center mb-12"
       >
         <h1 className="text-[40px] md:text-[48px] font-semibold text-gray-200">
@@ -83,7 +88,12 @@ const Encryption = () => {
       {/* Content */}
       <div className="w-full max-w-[1400px] grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
         {/* Education */}
-        <div>
+        <motion.div
+          variants={slideInFromLeft(0.3)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
           <h2 className="text-xl md:text-2xl font-semibold text-gray-200 mb-5">
             Education
           </h2>
@@ -94,7 +104,7 @@ const Encryption = () => {
                 key={item.title}
                 className="group flex items-center gap-5 p-6 rounded-xl border border-[#7042f861] bg-[#0300145e] backdrop-blur-md transition-all duration-300 hover:border-purple-400 hover:shadow-[0_0_25px_rgba(112,66,248,0.3)]"
               >
-                {/* Logo Slot */}
+                {/* Logo */}
                 <div className="w-[60px] h-[60px] shrink-0 rounded-lg border border-[#7042f861] bg-[#0b061b] flex items-center justify-center overflow-hidden">
                   <Image
                     src={`/${item.logo}`}
@@ -117,10 +127,15 @@ const Encryption = () => {
               </div>
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Experience */}
-        <div>
+        <motion.div
+          variants={slideInFromRight(0.3)}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.15 }}
+        >
           <h2 className="text-xl md:text-2xl font-semibold text-gray-200 mb-5">
             Experience
           </h2>
@@ -133,7 +148,7 @@ const Encryption = () => {
                   key={item.title}
                   className="group flex items-center gap-5 p-5 rounded-xl border border-[#7042f861] bg-[#0300145e] backdrop-blur-md transition-all duration-300 hover:border-cyan-400 hover:shadow-[0_0_25px_rgba(34,211,238,0.25)]"
                 >
-                  {/* Logo Slot */}
+                  {/* Logo */}
                   <div className="w-[55px] h-[55px] shrink-0 rounded-lg border border-[#7042f861] bg-[#0b061b] flex items-center justify-center overflow-hidden">
                     <Image
                       src={`/${item.logo}`}
@@ -159,7 +174,7 @@ const Encryption = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
