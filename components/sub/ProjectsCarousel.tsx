@@ -10,11 +10,13 @@ import { Projects_data } from "@/constants";
 const SCROLL_AMOUNT = 420;
 
 // Cross-browser fade mask for the left/right edges of the scroll area.
+// Wider transparent/blur zone (18%/82%) than before, so the sharp center
+// area feels narrower and more centered.
 const edgeMaskStyle: React.CSSProperties = {
   WebkitMaskImage:
-    "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+    "linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)",
   maskImage:
-    "linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%)",
+    "linear-gradient(to right, transparent 0%, black 18%, black 82%, transparent 100%)",
 };
 
 const ProjectsCarousel = () => {
@@ -48,10 +50,12 @@ const ProjectsCarousel = () => {
   };
 
   return (
-    <div className="relative">
-      {/* Extra blurred overlay on top of the mask, matching the reference depth */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-10 bg-gradient-to-r from-[#030014] via-[#030014]/70 to-transparent sm:w-20" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-10 bg-gradient-to-l from-[#030014] via-[#030014]/70 to-transparent sm:w-20" />
+    // Narrowed to match the Certificates carousel stage width (max-w-5xl),
+    // so the visible "sharp" window is proportionally smaller.
+    <div className="relative mx-auto w-full max-w-7xl">
+      {/* Extra blurred overlay on top of the mask, now wider to match */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-20 w-16 bg-gradient-to-r from-[#030014] via-[#030014]/70 to-transparent sm:w-28 md:w-36" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 z-20 w-16 bg-gradient-to-l from-[#030014] via-[#030014]/70 to-transparent sm:w-28 md:w-36" />
 
       <div
         ref={scrollerRef}
@@ -78,24 +82,24 @@ const ProjectsCarousel = () => {
         ))}
       </div>
 
-      <div className="mt-2 flex items-center justify-center gap-3">
-        <button
-          type="button"
-          aria-label="Previous project"
-          onClick={() => scrollByAmount(-SCROLL_AMOUNT)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#7042f861] bg-[#0300145e] text-gray-400 backdrop-blur-md transition-colors hover:border-cyan-400/50 hover:text-cyan-300"
-        >
-          <FiChevronLeft size={18} />
-        </button>
-        <button
-          type="button"
-          aria-label="Next project"
-          onClick={() => scrollByAmount(SCROLL_AMOUNT)}
-          className="flex h-10 w-10 items-center justify-center rounded-full border border-[#7042f861] bg-[#0300145e] text-gray-400 backdrop-blur-md transition-colors hover:border-cyan-400/50 hover:text-cyan-300"
-        >
-          <FiChevronRight size={18} />
-        </button>
-      </div>
+      {/* Nav buttons moved from below the carousel to the sides, floating
+          over the (now wider) blur zone */}
+      <button
+        type="button"
+        aria-label="Previous project"
+        onClick={() => scrollByAmount(-SCROLL_AMOUNT)}
+        className="absolute left-[-20px] top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#7042f861] bg-[#0300145e] text-gray-400 backdrop-blur-md transition-colors hover:border-cyan-400/50 hover:text-cyan-300 sm:left-2"
+      >
+        <FiChevronLeft size={18} />
+      </button>
+      <button
+        type="button"
+        aria-label="Next project"
+        onClick={() => scrollByAmount(SCROLL_AMOUNT)}
+        className="absolute right-[-20px] top-1/2 z-30 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-[#7042f861] bg-[#0300145e] text-gray-400 backdrop-blur-md transition-colors hover:border-cyan-400/50 hover:text-cyan-300 sm:right-2"
+      >
+        <FiChevronRight size={18} />
+      </button>
     </div>
   );
 };

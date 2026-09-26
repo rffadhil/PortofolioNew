@@ -42,9 +42,20 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: wire this up to a backend/email service (e.g. an API route or
-    // EmailJS) once one is available. Intentionally left unimplemented
-    // rather than faking a success state.
+
+    // Opens Gmail's web compose window directly, pre-filled — rather than
+    // mailto:, which depends on whatever mail app happens to be the OS
+    // default (often Outlook, or nothing set up at all). The native
+    // `required`/`type="email"` validation on the inputs still runs first;
+    // this handler only fires once the browser considers the form valid.
+    const subject = form.subject || "Portfolio inquiry";
+    const body = `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`;
+
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
+      EMAIL,
+    )}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    window.open(gmailUrl, "_blank", "noopener,noreferrer");
   };
 
   const handleCopyEmail = async () => {

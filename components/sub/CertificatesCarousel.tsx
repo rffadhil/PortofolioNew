@@ -180,9 +180,18 @@ const CertificatesCarousel = () => {
               title={cert.title}
               organization={cert.organization}
               year={cert.year}
-              image={cert.image}
+              file={cert.file}
               animateProps={getCardTransform(offset, spacing.near, spacing.far)}
-              onClick={() => setActive(index)}
+              onClick={() => {
+                // Card yang sedang di tengah/aktif -> buka PDF aslinya.
+                // Card di samping -> jadikan aktif dulu (satu-satunya cara
+                // navigasi sekarang, karena tombol panah/dot sudah dihapus).
+                if (offset === 0) {
+                  window.open(cert.file, "_blank", "noopener,noreferrer");
+                } else {
+                  setActive(index);
+                }
+              }}
             />
           );
         })}

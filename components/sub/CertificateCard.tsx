@@ -2,10 +2,10 @@
 
 "use client";
 
-import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
-import { FiAward } from "react-icons/fi";
+import { FiAward, FiExternalLink } from "react-icons/fi";
+import PdfThumbnail from "./PdfThumbnail";
 
 interface CardTransform {
   x: number;
@@ -22,7 +22,7 @@ interface CertificateCardProps {
   title: string;
   organization: string;
   year: string;
-  image: string;
+  file: string;
   animateProps: CardTransform;
   onClick: () => void;
 }
@@ -31,11 +31,12 @@ const CertificateCard = ({
   title,
   organization,
   year,
-  image,
+  file,
   animateProps,
   onClick,
 }: CertificateCardProps) => {
   const { zIndex, ...transform } = animateProps;
+  const isActive = zIndex === 30;
 
   return (
     <motion.article
@@ -64,15 +65,16 @@ const CertificateCard = ({
       </div>
 
       <div className="relative my-1 aspect-[4/3] overflow-hidden rounded-xl border border-[#7042f861] bg-[#0300145e]">
-        <Image
-          src={image}
-          alt={title}
-          fill
-          sizes="380px"
-          className="object-cover"
-        />
+        <PdfThumbnail src={file} className="absolute inset-0" />
 
         <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#100a23]/60 via-transparent to-transparent" />
+
+        {isActive && (
+          <span className="absolute bottom-2 right-2 flex items-center gap-1 rounded-full border border-[#7042f861] bg-[#0300145e]/90 px-2.5 py-1 text-[10px] text-cyan-300 backdrop-blur-md">
+            <FiExternalLink size={11} />
+            Buka PDF
+          </span>
+        )}
       </div>
 
       <div className="flex items-center justify-between border-t border-[#7042f861] pt-3 text-[13px]">

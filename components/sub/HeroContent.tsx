@@ -51,11 +51,13 @@ const HeroContent = () => {
           web experiences.
         </motion.p>
         <motion.a
-          href="#projects"
+          href="/CV - Rafi Fadhil Amanullah.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
           variants={slideInFromLeft(1)}
           className="py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]"
         >
-          Explore My Work!
+          View Resume
         </motion.a>
       </div>
 
