@@ -4,6 +4,7 @@ import { Portfolio_skills } from "@/constants";
 import React from "react";
 import SkillDataProvider from "../sub/SkillDataProvider";
 import SkillText from "../sub/SkillText";
+import SkillsMarquee from "../sub/SkillsMarquee";
 import { SparklesIcon } from "@heroicons/react/24/solid";
 
 const Skills = () => {
@@ -59,6 +60,9 @@ const Skills = () => {
         <SparklesIcon className="text-[#b49bff] mr-2 h-5 w-5" />
         <h1 className="Welcome-text text-[13px]">Built with Passion</h1>
       </div>
+
+      {/* Running tech-stack text */}
+      <SkillsMarquee />
 
       <div className="w-full h-full absolute">
         <div className="w-full h-full z-[-10] opacity-30 absolute flex items-center justify-center bg-cover">
