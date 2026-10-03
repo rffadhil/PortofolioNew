@@ -12,7 +12,7 @@ import ScrollProgressBar from "@/components/main/ScrollProgressBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Space Portfolio",
+  title: "Portofolio",
   description: "This is my portfolio",
 };
 
