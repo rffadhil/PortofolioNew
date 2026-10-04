@@ -13,10 +13,10 @@ export default function HologramPortrait() {
       initial={{ opacity: 0, x: 60 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
-      className="relative w-[650px] h-[650px] flex items-center justify-center overflow-hidden"
+      className="relative w-[340px] h-[340px] md:w-[650px] md:h-[650px] flex items-center justify-center overflow-hidden"
     >
       {/* Glow */}
-      <div className="absolute w-[380px] h-[380px] rounded-full bg-purple-600/15 blur-[70px]" />
+      <div className="absolute w-[200px] h-[200px] md:w-[380px] md:h-[380px] rounded-full bg-purple-600/15 blur-[70px]" />
 
       {/* Orbit 1 */}
       <motion.div
@@ -26,9 +26,9 @@ export default function HologramPortrait() {
           duration: 30,
           ease: "linear",
         }}
-        className="absolute w-[480px] h-[480px] rounded-full border-2 border-purple-400/25 shadow-[0_0_35px_rgba(168,85,247,0.35)]"
+        className="absolute w-[250px] h-[250px] md:w-[480px] md:h-[480px] rounded-full border-2 border-purple-400/25 shadow-[0_0_35px_rgba(168,85,247,0.35)]"
       />
-      <div className="absolute w-[500px] h-[500px] rounded-full bg-purple-500/10 blur-3xl" />
+      <div className="absolute w-[260px] h-[260px] md:w-[500px] md:h-[500px] rounded-full bg-purple-500/10 blur-3xl" />
 
       {/* Orbit 2 */}
       <motion.div
@@ -38,9 +38,9 @@ export default function HologramPortrait() {
           duration: 40,
           ease: "linear",
         }}
-        className="absolute w-[360px] h-[360px] rounded-full border border-cyan-400/25 shadow-[0_0_25px_rgba(34,211,238,0.25)]"
+        className="absolute w-[190px] h-[190px] md:w-[360px] md:h-[360px] rounded-full border border-cyan-400/25 shadow-[0_0_25px_rgba(34,211,238,0.25)]"
       />
-      <div className="absolute w-[380px] h-[380px] rounded-full bg-cyan-400/5 blur-2xl" />
+      <div className="absolute w-[200px] h-[200px] md:w-[380px] md:h-[380px] rounded-full bg-cyan-400/5 blur-2xl" />
 
       {/* Floating Card */}
       <motion.div
@@ -52,21 +52,21 @@ export default function HologramPortrait() {
           duration: 5,
           ease: "easeInOut",
         }}
-        className="relative translate-x-20"
+        className="relative translate-x-10 md:translate-x-20"
       >
         {/* Frame */}
         <div className="absolute inset-0 pointer-events-none z-30">
-          <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-purple-400" />
+          <div className="absolute top-0 left-0 w-8 h-8 md:w-16 md:h-16 border-l-2 border-t-2 border-purple-400" />
 
-          <div className="absolute top-0 right-0 w-16 h-16 border-r-2 border-t-2 border-purple-400" />
+          <div className="absolute top-0 right-0 w-8 h-8 md:w-16 md:h-16 border-r-2 border-t-2 border-purple-400" />
 
-          <div className="absolute bottom-0 left-0 w-16 h-16 border-l-2 border-b-2 border-purple-400" />
+          <div className="absolute bottom-0 left-0 w-8 h-8 md:w-16 md:h-16 border-l-2 border-b-2 border-purple-400" />
 
-          <div className="absolute bottom-0 right-0 w-16 h-16 border-r-2 border-b-2 border-purple-400" />
+          <div className="absolute bottom-0 right-0 w-8 h-8 md:w-16 md:h-16 border-r-2 border-b-2 border-purple-400" />
         </div>
 
         {/* Portrait */}
-        <div className="relative w-[320px] h-[420px] overflow-hidden rounded-[36px] border border-purple-500/40 shadow-[0_0_35px_rgba(139,92,246,.35)]">
+        <div className="relative w-[170px] h-[220px] md:w-[320px] md:h-[420px] overflow-hidden rounded-[36px] border border-purple-500/40 shadow-[0_0_35px_rgba(139,92,246,.35)]">
           <Image
             src="/profile.jpg"
             alt="Rafi Fadhil"
@@ -97,7 +97,7 @@ export default function HologramPortrait() {
         </div>
 
         {/* Online Badge */}
-        <div className="absolute -top-5 right-0 z-50 bg-[#090414]/90 backdrop-blur-md border border-purple-500/30 rounded-full px-4 py-2">
+        <div className="absolute -top-5 right-0 z-50 bg-[#090414]/90 backdrop-blur-md border border-purple-500/30 rounded-full px-3 py-1.5 md:px-4 md:py-2">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
 
@@ -106,11 +106,11 @@ export default function HologramPortrait() {
         </div>
 
         {/* Tech */}
-        <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-2 w-[320px]">
+        <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-2 w-[200px] md:w-[320px]">
           {techStack.map((tech) => (
             <span
               key={tech}
-              className="px-3 py-1 rounded-full border border-purple-500/20 bg-white/5 backdrop-blur-md text-xs text-gray-300"
+              className="px-3 py-1 rounded-full border border-purple-500/20 bg-white/5 backdrop-blur-md text-[10px] md:text-xs text-gray-300 whitespace-normal text-center leading-tight"
             >
               {tech}
             </span>
