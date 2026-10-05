@@ -31,14 +31,13 @@ const HeroContent = () => {
 
         <motion.div
           variants={slideInFromLeft(0.5)}
-          className="flex flex-col gap-6 mt-6 text-3xl sm:text-4xl md:text-6xl font-bold text-white max-w-[600px] w-auto h-auto leading-[1]"
+          className="flex flex-col gap-0.5 mt-6 text-3xl sm:text-4xl md:text-6xl font-bold text-white max-w-[600px] w-auto h-auto"
         >
-          <span>
-            Hi Everyone, I&apos;m
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
-              {" "}
-              Rafi Fadhil Amanullah{" "}
-            </span>
+          {}
+          <span>Hi Everyone, I&apos;m</span>
+          {}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500 leading-[1.2]">
+            Rafi Fadhil Amanullah
           </span>
         </motion.div>
 
