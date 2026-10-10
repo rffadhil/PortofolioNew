@@ -12,7 +12,7 @@ import ScrollProgressBar from "@/components/main/ScrollProgressBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Portofolio",
+  title: "Space Portfolio",
   description: "This is my portfolio",
 };
 
@@ -28,8 +28,13 @@ export default function RootLayout({
       >
         <StarsCanvas />
         <Navbar />
-        <Preloader>{children}</Preloader>
-        <Footer />
+        {/* overflow-x-clip stops anything inside from widening the page (and
+            thus the fixed navbar) on mobile; overflow-x-hidden is the
+            fallback for browsers without `clip` support. */}
+        <div className="w-full overflow-x-hidden overflow-x-clip">
+          <Preloader>{children}</Preloader>
+          <Footer />
+        </div>
         <ScrollProgressBar />
       </body>
     </html>

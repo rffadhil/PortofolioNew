@@ -69,7 +69,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="w-full h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014]/60 backdrop-blur-md z-[999] px-4 md:px-10">
+    <div className="w-full h-[55px] md:h-[65px] fixed top-0 shadow-lg shadow-[#2A0E61]/50 bg-[#030014]/60 backdrop-blur-md z-[999] px-4 md:px-10">
       <div className="w-full h-full flex flex-row items-center justify-between m-auto px-[10px]">
         <a
           href="#about-me"
@@ -156,7 +156,7 @@ const Navbar = () => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
-            className="absolute left-0 top-[65px] flex w-full flex-col gap-1 border-t border-[#7042f861] bg-[#0300145e] px-4 py-4 backdrop-blur-xl md:hidden"
+            className="absolute left-0 top-[55px] flex w-full flex-col gap-1 border-t border-[#7042f861] bg-[#0300145e] px-4 py-4 backdrop-blur-xl md:hidden"
           >
             {NAV_LINKS.map((link) => {
               const isActive = active === link.id;

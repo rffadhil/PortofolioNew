@@ -13,7 +13,7 @@ export default function HologramPortrait() {
       initial={{ opacity: 0, x: 60 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
-      className="relative w-[340px] h-[340px] md:w-[650px] md:h-[650px] flex items-center justify-center overflow-hidden"
+      className="relative w-full max-w-[340px] h-[340px] md:max-w-none md:w-[650px] md:h-[650px] flex items-center justify-center overflow-hidden"
     >
       {/* Glow */}
       <div className="absolute w-[200px] h-[200px] md:w-[380px] md:h-[380px] rounded-full bg-purple-600/15 blur-[70px]" />
